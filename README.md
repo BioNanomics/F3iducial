@@ -10,6 +10,9 @@ F3iducial is a modular open-source robotics platform combining a compact swerve-
 
 See [docs/use-cases.md](docs/use-cases.md) | [docs/architecture.md](docs/architecture.md) | [docs/probe-system.md](docs/probe-system.md) | [docs/contributing.md](docs/contributing.md)
 
+> 📣 **Volunteers wanted — CAD, code, building, electrical, vision, testing, docs, and more.**
+> Browse the [`help wanted` issues](https://github.com/BioNanomics/F3iducial/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and comment on any that interest you. See [Get Involved](#get-involved) below.
+
 ---
 
 ## Why?
@@ -138,6 +141,25 @@ F3iducial supports both FTC-sized and FRC-sized swerve platforms. See [docs/arch
 ## Project Status
 
 Early concept / proof-of-concept. Currently exploring detachable probe module, swerve localization, AprilTag alignment workflows, field inspection architecture, and calibration data models.
+
+---
+
+## Get Involved
+
+F3iducial is volunteer-driven and open to contributors of all experience levels. Each area below has a dedicated issue — **comment on the ones you'd like to help with**, no commitment required.
+
+| Area | Issue |
+|---|---|
+| CAD / mechanical design | [#1](https://github.com/BioNanomics/F3iducial/issues/1) |
+| Robot code (firmware / controls) | [#2](https://github.com/BioNanomics/F3iducial/issues/2) |
+| Tooling, reports, and UI | [#3](https://github.com/BioNanomics/F3iducial/issues/3) |
+| Building (mechanical assembly) | [#4](https://github.com/BioNanomics/F3iducial/issues/4) |
+| Electrical and wiring | [#5](https://github.com/BioNanomics/F3iducial/issues/5) |
+| Vision and AprilTag calibration | [#6](https://github.com/BioNanomics/F3iducial/issues/6) |
+| Testing (simulation and on-field) | [#7](https://github.com/BioNanomics/F3iducial/issues/7) |
+| Documentation and diagrams | [#8](https://github.com/BioNanomics/F3iducial/issues/8) |
+
+Or browse all open [`help wanted` issues](https://github.com/BioNanomics/F3iducial/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22). See [docs/contributing.md](docs/contributing.md) for general guidance.
 
 ---
 
