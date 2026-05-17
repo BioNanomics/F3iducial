@@ -1,0 +1,96 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" font-family="monospace, sans-serif">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Probe Module</text>
+
+  <!-- Quick-mount bracket -->
+  <rect x="100" y="100" width="30" height="200" fill="#2e4a6e" stroke="#4fc3f7" stroke-width="2" rx="3"/>
+  <!-- Mount bolts -->
+  <circle cx="115" cy="120" r="5" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="115" cy="150" r="5" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="115" cy="270" r="5" fill="#4fc3f7" opacity="0.7"/>
+  <circle cx="115" cy="300" r="5" fill="#4fc3f7" opacity="0.7"/>
+
+  <!-- Worm-gear lift column (Z axis) -->
+  <rect x="130" y="100" width="40" height="200" fill="#1e3a5f" stroke="#4fc3f7" stroke-width="1.5" rx="2"/>
+  <!-- Gear rack markings -->
+  <line x1="134" y1="120" x2="166" y2="120" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="135" x2="166" y2="135" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="150" x2="166" y2="150" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="165" x2="166" y2="165" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="180" x2="166" y2="180" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="195" x2="166" y2="195" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="210" x2="166" y2="210" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="225" x2="166" y2="225" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="240" x2="166" y2="240" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="255" x2="166" y2="255" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="270" x2="166" y2="270" stroke="#3d7abf" stroke-width="1.5"/>
+  <line x1="134" y1="285" x2="166" y2="285" stroke="#3d7abf" stroke-width="1.5"/>
+  <!-- Z-axis arrow -->
+  <line x1="178" y1="110" x2="178" y2="290" stroke="#80cbc4" stroke-width="1.5"/>
+  <polygon points="178,100 174,114 182,114" fill="#80cbc4"/>
+  <polygon points="178,300 174,286 182,286" fill="#80cbc4"/>
+  <text x="185" y="205" fill="#80cbc4" font-size="10">Z</text>
+
+  <!-- Carriage block (slides on column) -->
+  <rect x="128" y="185" width="44" height="32" fill="#37474f" stroke="#78909c" stroke-width="1.5" rx="2"/>
+
+  <!-- Horizontal arm -->
+  <rect x="172" y="191" width="160" height="18" fill="#1e3a5f" stroke="#4fc3f7" stroke-width="1.5" rx="2"/>
+
+  <!-- Camera mount -->
+  <rect x="302" y="175" width="38" height="38" fill="#263238" stroke="#80cbc4" stroke-width="2" rx="4"/>
+  <circle cx="321" cy="194" r="10" fill="#004d40" stroke="#80cbc4" stroke-width="1.5"/>
+  <circle cx="321" cy="194" r="4" fill="#26a69a"/>
+  <!-- Camera label line -->
+  <text x="342" y="173" fill="#80cbc4" font-size="10">Camera</text>
+
+  <!-- Probe arm extending horizontally -->
+  <rect x="340" y="196" width="100" height="10" fill="#546e7a" stroke="#90a4ae" stroke-width="1.5" rx="1"/>
+
+  <!-- Soft probe tip -->
+  <ellipse cx="448" cy="201" rx="14" ry="10" fill="#ff8f00" stroke="#ffa726" stroke-width="1.5"/>
+  <text x="462" y="223" fill="#ff8f00" font-size="10">Soft Tip</text>
+
+  <!-- Leader lines and labels -->
+
+  <!-- Quick-mount bracket -->
+  <line x1="100" y1="150" x2="50" y2="110" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="48" y="105" text-anchor="end" fill="white" font-size="11">Quick-Mount</text>
+  <text x="48" y="118" text-anchor="end" fill="white" font-size="11">Bracket</text>
+
+  <!-- Worm-gear lift -->
+  <line x1="150" y1="100" x2="190" y2="65" stroke="#4fc3f7" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="193" y="62" fill="white" font-size="11">Worm-Gear Lift</text>
+  <text x="193" y="75" fill="white" font-size="11">(Z Axis Only)</text>
+
+  <!-- Carriage -->
+  <line x1="172" y1="201" x2="215" y2="250" stroke="#78909c" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="218" y="253" fill="white" font-size="11">Carriage Block</text>
+
+  <!-- Camera mount label leader -->
+  <line x1="321" y1="175" x2="321" y2="145" stroke="#80cbc4" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="321" y="140" text-anchor="middle" fill="white" font-size="11">Camera Mount</text>
+
+  <!-- Probe arm label -->
+  <line x1="390" y1="196" x2="390" y2="165" stroke="#90a4ae" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="390" y="160" text-anchor="middle" fill="white" font-size="11">Probe Arm</text>
+  <text x="390" y="173" text-anchor="middle" fill="white" font-size="10">(horizontal)</text>
+
+  <!-- Soft tip label -->
+  <line x1="455" y1="201" x2="510" y2="175" stroke="#ff8f00" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="513" y="173" fill="white" font-size="11">Interchangeable</text>
+  <text x="513" y="186" fill="white" font-size="11">Probe Tip</text>
+
+  <!-- Module ID box -->
+  <rect x="100" y="330" width="110" height="44" fill="#0d1b2a" stroke="#546e7a" stroke-width="1" rx="3"/>
+  <text x="155" y="346" text-anchor="middle" fill="#90a4ae" font-size="9">MODULE ID</text>
+  <text x="155" y="358" text-anchor="middle" fill="#4fc3f7" font-size="9">probe-v1.0</text>
+  <text x="155" y="370" text-anchor="middle" fill="#607d8b" font-size="8">HW REV A</text>
+
+  <line x1="115" y1="300" x2="115" y2="330" stroke="#546e7a" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="220" y="356" fill="white" font-size="11">Module ID &amp;</text>
+  <text x="220" y="369" fill="white" font-size="11">Self-Description</text>
+</svg>

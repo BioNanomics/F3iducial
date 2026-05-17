@@ -1,0 +1,66 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" font-family="monospace, sans-serif">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="200" y="36" text-anchor="middle" fill="white" font-size="18" font-weight="bold">Calibration Workflow</text>
+
+  <!-- Step boxes and arrows — vertical flowchart -->
+  <!-- Step 1: Detect AprilTag -->
+  <rect x="80" y="65" width="240" height="58" fill="#1565c0" stroke="#4fc3f7" stroke-width="2" rx="10"/>
+  <text x="200" y="89" text-anchor="middle" fill="white" font-size="13" font-weight="bold">1. Detect AprilTag</text>
+  <text x="200" y="108" text-anchor="middle" fill="#90caf9" font-size="10">Vision pipeline acquires tag pose</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="200" y1="123" x2="200" y2="148" stroke="#ff8f00" stroke-width="2.5"/>
+  <polygon points="200,155 194,143 206,143" fill="#ff8f00"/>
+
+  <!-- Step 2: Establish Field Pose -->
+  <rect x="80" y="155" width="240" height="58" fill="#1565c0" stroke="#4fc3f7" stroke-width="2" rx="10"/>
+  <text x="200" y="179" text-anchor="middle" fill="white" font-size="13" font-weight="bold">2. Establish Field Pose</text>
+  <text x="200" y="198" text-anchor="middle" fill="#90caf9" font-size="10">Robot-to-field transform computed</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="200" y1="213" x2="200" y2="238" stroke="#ff8f00" stroke-width="2.5"/>
+  <polygon points="200,245 194,233 206,233" fill="#ff8f00"/>
+
+  <!-- Step 3: Navigate to Element -->
+  <rect x="80" y="245" width="240" height="58" fill="#1565c0" stroke="#4fc3f7" stroke-width="2" rx="10"/>
+  <text x="200" y="269" text-anchor="middle" fill="white" font-size="13" font-weight="bold">3. Navigate to Element</text>
+  <text x="200" y="288" text-anchor="middle" fill="#90caf9" font-size="10">Autonomous or manual drive</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="200" y1="303" x2="200" y2="328" stroke="#ff8f00" stroke-width="2.5"/>
+  <polygon points="200,335 194,323 206,323" fill="#ff8f00"/>
+
+  <!-- Step 4: Probe / Inspect -->
+  <rect x="80" y="335" width="240" height="58" fill="#1565c0" stroke="#4fc3f7" stroke-width="2" rx="10"/>
+  <text x="200" y="359" text-anchor="middle" fill="white" font-size="13" font-weight="bold">4. Probe / Inspect</text>
+  <text x="200" y="378" text-anchor="middle" fill="#90caf9" font-size="10">Contact or vision measurement</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="200" y1="393" x2="200" y2="418" stroke="#ff8f00" stroke-width="2.5"/>
+  <polygon points="200,425 194,413 206,413" fill="#ff8f00"/>
+
+  <!-- Step 5: Record Deviation -->
+  <rect x="80" y="425" width="240" height="58" fill="#1565c0" stroke="#4fc3f7" stroke-width="2" rx="10"/>
+  <text x="200" y="449" text-anchor="middle" fill="white" font-size="13" font-weight="bold">5. Record Deviation</text>
+  <text x="200" y="468" text-anchor="middle" fill="#90caf9" font-size="10">Δx, Δy, Δθ logged to dataset</text>
+
+  <!-- Arrow 5→6 -->
+  <line x1="200" y1="483" x2="200" y2="508" stroke="#ff8f00" stroke-width="2.5"/>
+  <polygon points="200,515 194,503 206,503" fill="#ff8f00"/>
+
+  <!-- Step 6: Generate Report -->
+  <rect x="80" y="515" width="240" height="58" fill="#0d47a1" stroke="#80cbc4" stroke-width="2.5" rx="10"/>
+  <text x="200" y="539" text-anchor="middle" fill="white" font-size="13" font-weight="bold">6. Generate Report</text>
+  <text x="200" y="558" text-anchor="middle" fill="#80cbc4" font-size="10">Heatmap · offsets · correction data</text>
+
+  <!-- Step number indicators on left -->
+  <circle cx="62" cy="94" r="12" fill="#0288d1" stroke="#4fc3f7" stroke-width="1.5"/>
+  <circle cx="62" cy="184" r="12" fill="#0288d1" stroke="#4fc3f7" stroke-width="1.5"/>
+  <circle cx="62" cy="274" r="12" fill="#0288d1" stroke="#4fc3f7" stroke-width="1.5"/>
+  <circle cx="62" cy="364" r="12" fill="#0288d1" stroke="#4fc3f7" stroke-width="1.5"/>
+  <circle cx="62" cy="454" r="12" fill="#0288d1" stroke="#4fc3f7" stroke-width="1.5"/>
+  <circle cx="62" cy="544" r="12" fill="#006064" stroke="#80cbc4" stroke-width="1.5"/>
+</svg>
