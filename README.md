@@ -4,7 +4,9 @@
 
 F3iducial is a modular open-source robotics platform combining a compact swerve-drive robot, AprilTag vision, inertial localization, and a detachable probe module to measure and validate real-world field geometry against expected layouts.
 
-**F3iducial is NOT a competition robot. It is a mobile field instrumentation platform.**
+![Proof of Concept](images/poc.jpeg)
+
+**F3iducial is NOT a competition robot. It is a mobile field instrumentation platform.** The goal is to have F3iducial Arm or F3iducial bot (FTC-sized) available for teams to borrow at events, or to build their own based on the open-source design.
 
 See [docs/use-cases.md](docs/use-cases.md) | [docs/architecture.md](docs/architecture.md) | [docs/probe-system.md](docs/probe-system.md) | [docs/contributing.md](docs/contributing.md)
 
@@ -18,6 +20,8 @@ Modern FIRST robots depend heavily on accurate field geometry. A few centimeters
 
 Today, field verification is mostly tape measures, eyeballing, and guesswork. F3iducial exists to change that.
 
+![Field Diagram](images/field-diagram.svg)
+
 ---
 
 ## Core Workflow
@@ -28,6 +32,8 @@ Today, field verification is mostly tape measures, eyeballing, and guesswork. F3
 4. Probe or inspect those elements
 5. Record offsets and deviations
 6. Generate reports or correction data
+
+![Calibration Workflow](images/calibration-workflow.svg)
 
 ---
 
@@ -47,7 +53,17 @@ Today, field verification is mostly tape measures, eyeballing, and guesswork. F3
 
 F3iducial supports both FTC-sized and FRC-sized swerve platforms. See [docs/architecture.md](docs/architecture.md) for full mechanical details.
 
-- [FTC Drive Base Reference Video](https://youtu.be/aETaRclTDDo?si=y34b_Y77TWr-n3QT)
+![Robot Architecture](images/robot-architecture.svg)
+
+### Swerve Drive
+
+![FTC Swerve Drive](images/swerve-ftc.jpeg)
+
+[![FTC Swerve Drive Base Reference Video](https://img.youtube.com/vi/aETaRclTDDo/0.jpg)](https://youtu.be/aETaRclTDDo)
+
+### Probe Module
+
+![Probe Module](images/probe-module.svg)
 
 ---
 
