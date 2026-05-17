@@ -172,3 +172,10 @@ TBD — potential directions: Apache 2.0, MIT, CERN-OHL-S
 ## The Goal
 
 Reliable autonomous behavior starts with reliable field geometry. F3iducial helps teams understand the field they are actually playing on.
+
+## Chat that inspired this project
+
+You can join the chat that inspired this and ask quesitons here:
+
+https://chatgpt.com/gg/v/6a09d51aeee481a3a7a758f995838633?token=HA1swULJiMj6oCdXEHP_jQ
+
