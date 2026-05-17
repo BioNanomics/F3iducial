@@ -36,6 +36,64 @@ Today, field verification is mostly tape measures, eyeballing, and guesswork. F3
 
 > **Safety:** all motion during the tour defaults to low speed. On any fault — loss of vision lock beyond tolerance, unexpected odometry divergence, contact/whisker trip, or any other error — the robot **stops all motion immediately and reports the reason**. There is no automatic retract or recovery motion; a human operator decides the next step.
 
+### Camera / Probe Geometry
+
+The localization camera is mounted **below the probe arm and tilted slightly upward** so the tag remains in clear view *right up to the moment of contact* — the probe never occludes the camera, and the tag is observed from below as the probe rises to meet its center.
+
+- **Camera position:** low on the chassis (optical center ≤ ~0.15 m above floor), pitched **+15° to +25°** upward.
+- **Probe tip:** above and forward of the camera, on the fixed horizontal arm. The camera-to-tip transform is a rigid, per-module calibration carried in the probe module's self-describing config.
+- **Approach:** chassis drives in slowly while the Z-lift positions the tip at the target's center height. The camera maintains tag lock throughout; pose updates are taken **before** Z motion (or with Z briefly held), never during a moving lift.
+- **Tilted tags** (e.g., Reefscape reef faces, Crescendo speaker) are approached along the tag's surface normal where geometry allows, with the residual angle recorded rather than mechanically matched.
+
+### Tag Height Coverage (FRC AprilTag history)
+
+F3iducial's Z-lift must reach every AprilTag center used in recent FRC seasons. Approximate published centers:
+
+| Season | Game | Tag group | Center height |
+|---|---|---|---|
+| 2023 | Charged Up | Grid (1–3, 6–8) | ~18.2 in (0.46 m) |
+| 2023 | Charged Up | Double Substation (4, 5) | ~27.4 in (0.70 m) |
+| 2024 | Crescendo | Source / Amp (1, 2, 5, 6, 9, 10) | ~53.4 in (1.36 m) |
+| 2024 | Crescendo | Speaker (3, 4, 7, 8) — angled | ~57.1 in (1.45 m) |
+| 2024 | Crescendo | Stage / Trap (11–16) | ~47–52 in (1.20–1.32 m) |
+| 2025 | Reefscape | Reef faces (6–11, 17–22) | ~8.75 in (0.22 m) — very low |
+| 2025 | Reefscape | Processor (3, 16) | ~51.25 in (1.30 m) |
+| 2025 | Reefscape | Coral Station (1, 2, 12, 13) | ~58.5 in (1.49 m) |
+| 2025 | Reefscape | Barge / Cage (4, 5, 14, 15) | ~73 in (1.85 m) — very high |
+
+> Authoritative tag poses are loaded from the vendored WPILib AprilTag layouts in [fields/](fields/) — the table above is a design-envelope reference, not a runtime source.
+
+**Design envelope:**
+
+- **Probe-tip Z travel:** 0.20 m → 1.90 m (covers all FRC AprilTag centers to date with margin).
+- **Camera optical center at stowed Z:** ≤ 0.15 m above floor.
+- **Camera pitch:** +15° to +25° upward.
+- **Challenge:** the Reefscape reef (very low) and barge (very high) within the same season force the largest single-season span (~1.6 m). A two-stage / removable riser column or per-event probe module variants are reasonable mechanical responses; either way the module reports its reachable Z range as part of its self-description.
+
+### Field Configuration
+
+F3iducial does not invent its own field layout files. It uses the same calibrated WPILib field metadata as the broader FRC ecosystem, distributed through the **[refinery-forcefield](https://github.com/BioNanomics/refinery-forcefield)** library (also part of The REFINERY by BioNanomics).
+
+- **Field-image calibration JSONs** (field corners, field size, image reference) for 2023–2026 are vendored in [fields/](fields/), sourced from `refinery-forcefield/editor/fields/`.
+- **AprilTag layout JSONs** (per-tag pose, ID, size) are vendored alongside, sourced from WPILib's `apriltag` resources.
+- At build time (once the robot code lands), `refinery-forcefield` is consumed as a Gradle dependency:
+
+  ```gradle
+  // settings.gradle
+  dependencyResolutionManagement {
+      repositories { maven { url 'https://jitpack.io' } }
+  }
+
+  // build.gradle
+  dependencies {
+      implementation 'com.github.BioNanomics:refinery-forcefield:v0.1.0'
+  }
+  ```
+
+  This gives F3iducial a single source of truth for field dimensions and the same coordinate convention (WPILib blue-origin, meters, radians) used by PathPlanner and Choreo.
+
+See [fields/README.md](fields/README.md) for the full manifest and provenance.
+
 ---
 
 ## Core Workflow
@@ -46,8 +104,6 @@ Today, field verification is mostly tape measures, eyeballing, and guesswork. F3
 4. Probe or inspect those elements
 5. Record offsets and deviations
 6. Generate reports or correction data
-
-![Calibration Workflow](images/calibration-workflow.svg)
 
 ---
 
