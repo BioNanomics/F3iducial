@@ -10,8 +10,8 @@ Hardware can injure people and damage equipment.
 
 - **Default to low speed**: All motion defaults must be slow until explicitly overridden by calibrated, validated state
 - **Hardware interlocks before software**: Don't rely solely on software limits — design for hardware safety stops
-- **Fail safe**: On any fault, communication loss, or unexpected state, stop all motion immediately
-- **Probe retracts on error**: The probe arm must retract or stop before any uncontrolled motion
+- **Fail safe — stop and report**: On any fault, communication loss, or unexpected state, stop **all** motion immediately and report the reason. Do not attempt automatic recovery, repositioning, or retraction; wait for a human operator.
+- **Probe is fixed**: The probe does not extend, retract, or articulate. Its only powered motion is **Z-axis lift** (worm-gear). Contact is made by driving the chassis, not by moving the probe horizontally. Never write logic that assumes the probe can be "pulled back" from a surface.
 - **Test in simulation before hardware**: Validate logic in sim before deploying to physical hardware
 - **Safety features are not optional**: Whisker bars, speed limiters, and emergency stops must not be bypassed
 

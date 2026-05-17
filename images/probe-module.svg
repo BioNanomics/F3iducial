@@ -47,7 +47,7 @@
   <!-- Camera label line -->
   <text x="342" y="173" fill="#80cbc4" font-size="10">Camera</text>
 
-  <!-- Probe arm extending horizontally -->
+  <!-- Fixed horizontal probe (no extend/retract) -->
   <rect x="340" y="196" width="100" height="10" fill="#546e7a" stroke="#90a4ae" stroke-width="1.5" rx="1"/>
 
   <!-- Soft probe tip -->

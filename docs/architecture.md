@@ -8,18 +8,19 @@ Typical features: 4 swerve modules, IMU (Pigeon2 or equivalent), low-speed calib
 
 **Reference:** [FTC Drive Base Reference Video](https://youtu.be/aETaRclTDDo?si=y34b_Y77TWr-n3QT)
 
-## Detachable Probe Arm
+## Detachable Probe Module
 
 The probe module mounts externally where bumpers would normally attach.
 
 - Detachable quick-mount interface
-- Fixed horizontal overhang
-- Manual XY adjustment
-- Motorized Z-only movement (worm-gear lift)
-- Camera mounted directly on arm
+- **Fixed horizontal overhang** — no extension or retraction in tour
+- Manual XY adjustment (set at mount time, not driven)
+- **Motorized Z-only movement** (worm-gear lift) — the only powered probe axis
+- Camera mounted directly on the module
 - Horizontal side probe (not downward)
+- Contact with a target is made by **driving the chassis**, not by moving the probe
 
-The probe is intentionally simple and robust — no articulated arm, no inverse kinematics, no multi-axis manipulation.
+The probe is intentionally simple and robust — no articulated arm, no inverse kinematics, no multi-axis manipulation, and no automatic retract on error (the robot stops and reports instead).
 
 ## Vision System
 

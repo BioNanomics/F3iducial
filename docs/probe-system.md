@@ -13,15 +13,23 @@ Target accuracy: ±1–2 cm repeatability.
 - Electrical contact probe
 - Interchangeable field-safe tips
 
+## Motion
+
+The probe is **fixed in the horizontal plane**. It does not extend, retract, or articulate.
+
+- **Z-axis only**: the sole powered probe motion is a worm-gear vertical lift used to align tip height with the target.
+- **Contact is made by driving the chassis** slowly toward the surface, not by moving the probe.
+- **Manual XY adjustment** is done off-robot at mount time; there is no in-tour XY motion of the probe.
+
 ## Safety
 
 - Low-speed calibration mode
 - Front whisker safety bar
 - Immediate stop on contact
-- Probe retract on collision
+- **Stop and report on any error** — no automatic retract, recovery, or repositioning. A human operator decides the next step.
 - Software speed limiting
 - Manual override mode
 
 ## Modularity
 
-The probe arm is detachable and self-describing. A module may contain: camera calibration, probe geometry, arm offsets, module ID, hardware revision.
+The probe module is detachable and self-describing. A module may contain: camera calibration, probe geometry, fixed mount offsets, module ID, hardware revision.

@@ -22,6 +22,20 @@ Today, field verification is mostly tape measures, eyeballing, and guesswork. F3
 
 ![Field Diagram](images/field-diagram.svg)
 
+### Running an Inspection Tour
+
+1. **Place the robot 3–4 ft in front of AprilTag 1**, roughly squared to the wall. Power on and put it in *Tour* mode.
+2. **Camera + odometry calibration.** The robot performs a short, gentle in-place motion (forward/back and a small rotation) while keeping Tag 1 in view. This:
+   - Resolves the camera intrinsics/extrinsics against a known tag pose.
+   - Seeds the field-relative pose estimate.
+   - Characterizes wheel odometry scale and heading drift against the vision fix.
+3. **Odometry-driven tour.** Once calibrated, the robot drives **slowly** under fused odometry + vision, visiting tags in order: **1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10**.
+4. **Probe at each tag.** The probe is **fixed in the horizontal plane** — it does not extend, retract, or articulate. At each waypoint the robot drives in until the side-mounted probe contacts the tag's mounting surface, adjusting only the probe's **Z height** (worm-gear lift) to align with the tag. The contact pose is recorded and compared to the expected field-layout pose.
+5. **Re-localize opportunistically.** Whenever a tag is in clear view at a waypoint, its pose estimate is used to correct accumulated odometry error before continuing.
+6. **Stop at Tag 10.** The robot reports per-tag deviations and an overall field-geometry summary.
+
+> **Safety:** all motion during the tour defaults to low speed. On any fault — loss of vision lock beyond tolerance, unexpected odometry divergence, contact/whisker trip, or any other error — the robot **stops all motion immediately and reports the reason**. There is no automatic retract or recovery motion; a human operator decides the next step.
+
 ---
 
 ## Core Workflow
