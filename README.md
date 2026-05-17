@@ -123,8 +123,6 @@ See [fields/README.md](fields/README.md) for the full manifest and provenance.
 
 F3iducial supports both FTC-sized and FRC-sized swerve platforms. See [docs/architecture.md](docs/architecture.md) for full mechanical details.
 
-![Robot Architecture](images/robot-architecture.svg)
-
 ### Swerve Drive
 
 ![FTC Swerve Drive](images/swerve-ftc.jpeg)
